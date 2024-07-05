@@ -1,0 +1,21 @@
+
+import java.util.*;
+public class Main{
+	
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		System.out.println("Enter the number :");
+		int digit=input.nextInt();
+		int rev=0,sum=0,rem;
+		
+		while(digit>0) {
+			rem=digit%10;
+			sum=sum*10+rem;
+			digit=digit/10;
+		}
+		System.out.println("Reverse of the number is "+sum);
+		
+	}
+	
+}
+
