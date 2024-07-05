@@ -1,0 +1,29 @@
+
+import java.util.*;
+public class Main{
+	public static int isPrime(int num) {
+		int count=0;
+		for(int i=1;i<=num;i++) {
+			if(num%i==0) {
+				count+=1;
+			}
+		}
+		return count;
+	}
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		int a=input.nextInt();
+		int b=input.nextInt();
+		if(a<b) {
+			for(int i=a;i<b;i++) {
+				int ans=isPrime(i);
+				if(ans==2) {
+					System.out.print(i+" ");
+				}
+			}
+		}
+		
+	}
+	
+}
+
