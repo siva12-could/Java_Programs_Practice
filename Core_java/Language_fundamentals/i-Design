@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		int subj1=input.nextInt();
+		int subj2=input.nextInt();
+		int subj3=input.nextInt();
+		
+		int avg=(subj1+subj2+subj3)/3;
+		
+		if(avg>=90) {
+			System.out.println("The grade is A");
+		}
+		else if(avg<90 && avg>=80) {
+			System.out.println("The grade is B");	
+		}
+		else if(avg<80 && avg>=70) {
+			System.out.println("The grade is C");
+		}
+		else if(avg<70 && avg>=60) {
+			System.out.println("The grade is D");
+		}
+		else if(avg<60 && avg>=50) {
+			System.out.println("The grade is E");
+		}
+		else if(avg<50) {
+			System.out.println("The grade is F");
+		}
+		
+	}
+
+}
