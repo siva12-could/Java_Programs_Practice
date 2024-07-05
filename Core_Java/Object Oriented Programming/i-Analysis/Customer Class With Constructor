@@ -1,0 +1,39 @@
+
+import java.util.*;
+// re-name the class name Main to Customer
+public class Main{
+	String customerName;
+	String customerEmail;
+	String customerType;
+	String customerAddress;
+	Main(String customerName,String customerEmail,String customerType,String customerAddress){
+		this.customerName=customerName;
+		this.customerEmail=customerEmail;
+		this.customerType=customerType;
+		this.customerAddress=customerAddress;
+	}
+	public void displayDetails() {
+		System.out.println("Name: "+customerName);
+		System.out.println("E-mail: "+customerEmail);
+		System.out.println("Type: "+customerType);
+		System.out.println("Location: "+customerAddress);
+	}
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		System.out.println("Enter the Customer Details");
+		System.out.println("Enter the name");
+		String customerName=input.next();
+		System.out.println("Enter the email");
+		String customerEmail=input.next();
+		System.out.println("Enter the type");
+		String customerType=input.next();
+		System.out.println("Enter the location");
+		String customerAddress=input.next();
+		
+		Main obj=new Main(customerName,customerEmail,customerType,customerAddress);
+		obj.displayDetails();
+		
+	}
+	
+}
+
