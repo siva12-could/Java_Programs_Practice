@@ -1,0 +1,4 @@
+public interface Stall {
+ 	//fill your code here
+	void display();
+}
