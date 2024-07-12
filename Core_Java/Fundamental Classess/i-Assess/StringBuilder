@@ -1,0 +1,40 @@
+import java.util.*;
+import java.lang.*;
+public class Main {
+	
+	public static String formatcode(String code) {
+		StringBuilder result=new StringBuilder();
+		String citycode=code.substring(0,2);
+		String refNumber=code.substring(2);
+		
+		switch(citycode) {
+			case "DH":
+				result.append("DEL");
+				break;
+			case "MB":
+				result.append("MUM");
+				break;
+			case "KL":
+				result.append("KOL");
+				break;
+			default:
+				return "Invalid city code";
+		}
+		while(refNumber.length()<5) {
+			refNumber="0".concat(refNumber);
+		}
+		result.append(refNumber);
+		return result.toString();
+	}
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		System.out.println("Enter the code");
+		String inputcode=input.nextLine();
+		String formattedcode=formatcode(inputcode);
+		System.out.println("Formatted code");
+		System.out.println(formattedcode);
+		
+	
+	
+	}
+}
