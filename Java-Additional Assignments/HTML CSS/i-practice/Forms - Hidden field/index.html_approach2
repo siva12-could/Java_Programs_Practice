@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Registration Form</title>
+    <style>
+        h1{
+            padding-top: 2%;
+            text-align: center;
+        }
+        #name1{
+            margin-left: 5%;
+        }
+        #email1{
+            margin-left: 5%;
+        }
+        #phoneNumber{
+            margin-left: 1%;
+        }
+        #userName{
+            margin-left: 3%;
+        }
+        #password{
+            margin-left: 3%;
+        }
+        #register{
+            margin-left: 2%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Marriage Registration Form</h1>
+    <form method="get" action="display.php">
+        <input type="hidden" name="hidden" value="Marriage">
+        <center>
+            <p>
+            Name 
+            <input type="text" id="name1" name="name" /><br/></p>
+            <p>
+            Email
+            <input type="email" id="email1" name="email"/><br/></p>
+            <p>
+            Phone Number
+            <input type="text" id="phoneNumber" name="phoneNumber"/></p>
+            <p>
+            Username
+            <input type="text" id="userName" name="userName"/></p>
+            <p>            
+            Password
+            <input type="password" id="password" name="password"/></p><br/>
+            <input type="submit" id="register" name="register" value="Register"/>
+        </center>
+    </form>
+</body>
+</html>
