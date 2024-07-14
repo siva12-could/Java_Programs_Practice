@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#Register{
+			margin-left:1px;
+		}
+	</style>
+</head>
+<body>
+	<form action="display.php" method="GET">
+	<center>
+		<h1>Marriage Registration Form</h1>
+		<p><pre>Name	    <input type="text" id="Name" name="name"></pre></p>
+		<p><pre>Email	    <input type="text" id="Email" name="email"></pre></p>
+		<p><pre>Phone Number<input type="text" id="Phone" name="phoneNumber"></pre></p>
+		<p><pre>Useername   <input type="text" id="User" name="userName"></pre></p>
+		<p><pre>Password    <input type="text" id="Password" name="password"></pre></p>
+		
+		<p>
+		<input type="button" id="Register" name="register" value="register"> 
+		</p>
+	</center>
+	</form>
+</body>
+</html>
