@@ -1,0 +1,69 @@
+import java.util.*;
+
+class Address {
+    private String area;
+    private String city;
+    private String state;
+    private String pincode;
+
+    public Address(String area, String city, String state, String pincode) {
+        this.area = area;
+        this.city = city;
+        this.state = state;
+        this.pincode = pincode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read the number of addresses
+        System.out.println("Enter the number of address:");
+        int n = Integer.parseInt(scanner.nextLine());
+
+        // Initialize the Map of Maps
+        Map<String, Map<String, Integer>> stateCityMap = new TreeMap<>();
+
+        // Read addresses and populate the map
+        System.out.println("Enter the address:");
+        for (int i = 0; i < n; i++) {
+            String input = scanner.nextLine();
+            String[] parts = input.split(",");
+            Address address = new Address(parts[0], parts[1], parts[2], parts[3]);
+
+            String state = address.getState();
+            String city = address.getCity();
+
+            // Get or create the inner map for the state
+            stateCityMap.putIfAbsent(state, new TreeMap<>());
+            Map<String, Integer> cityMap = stateCityMap.get(state);
+
+            // Update the count for the city
+            cityMap.put(city, cityMap.getOrDefault(city, 0) + 1);
+        }
+
+        // Display the result
+        System.out.println("Number of entries in city/state wise:\n");
+        for (Map.Entry<String, Map<String, Integer>> stateEntry : stateCityMap.entrySet()) {
+            String state = stateEntry.getKey();
+            System.out.println("State:" + state);
+            for (Map.Entry<String, Integer> cityEntry : stateEntry.getValue().entrySet()) {
+                String city = cityEntry.getKey();
+                int count = cityEntry.getValue();
+                System.out.println("City:" + city + " Count:" + count);
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
