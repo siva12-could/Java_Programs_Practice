@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		List<String> list=new ArrayList<>();
+		do {
+			System.out.println("Enter Email address");
+			String email=input.nextLine();
+			list.add(email);
+			System.out.println("Do you want to Continue?(yes/no)");
+			
+		}while(input.nextLine().equals("yes"));
+		System.out.println("Enter the email addresses to be searched separated by comma");
+		String[] arr=input.nextLine().split(",");
+		List<String> list2=Arrays.asList(arr);
+		if(list.containsAll(list2)) {
+			System.out.println("Email addresses are present");
+		}
+		else {
+			System.out.println("Email addresses are not present");
+		}
+	}
+
+}
