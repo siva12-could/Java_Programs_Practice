@@ -1,0 +1,44 @@
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Set<String> emailSet = new HashSet<>();
+
+        while (true) {
+            System.out.println("Enter Email address");
+            String email = scanner.nextLine();
+            emailSet.add(email.toLowerCase());
+
+            System.out.println("Do you want to Continue?(yes/no)");
+            String choice = scanner.nextLine().toLowerCase();
+            if (!choice.equals("yes")) {
+                break;
+            }
+        }
+
+     
+        System.out.println("Enter the email addresses to be searched separated by comma");
+        String searchEmailsStr = scanner.nextLine();
+        String[] searchEmailsArr = searchEmailsStr.split(",");
+
+       
+        Set<String> searchEmailsSet = new HashSet<>();
+        for (String email : searchEmailsArr) {
+            searchEmailsSet.add(email.toLowerCase());
+        }
+
+       
+        boolean allPresent = emailSet.containsAll(searchEmailsSet);
+
+        if (allPresent) {
+            System.out.println("Email addresses are present");
+        } else {
+            System.out.println("Email addresses are not present");
+        }
+
+        scanner.close();
+    }
+}
