@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunction(){
+            var grade=document.getElementById("mark").value;
+            var finalre=document.getElementById("result");
+            finalre.innerHTML=" ";
+            var no_grade=Number(grade);
+            if(no_grade==100){
+                finalre.innerHTML="Grade obtained by the student is : A+";
+            }
+            else if(no_grade>=90 && no_grade<=99){
+                finalre.innerHTML="Grade obtained by the student is : A";
+            }
+            else if(no_grade>=80 && no_grade<=89){
+                finalre.innerHTML="Grade obtained by the student is : B";
+            }
+            else if(no_grade>=70 && no_grade<=79){
+                finalre.innerHTML="Grade obtained by the student is : C";
+            }
+            else if(no_grade>=60 && no_grade<=69){
+                finalre.innerHTML="Grade obtained by the student is : D";
+            }
+            else if(no_grade>=50 && no_grade<=59){
+                finalre.innerHTML="Grade obtained by the student is : E";
+            }
+            else{
+                finalre.innerHTML="Grade obtained by the student is : RA";
+                finalre.style.color="red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Grade Sheet</h1>
+        Marks<input type="text" id="mark" name="mark"/><br/><br/>
+        <button type="submit" name="submit" onclick="myFunction()">Submit</button>
+        <div id="result" style="color:green"></div>
+    </center>
+</body>
+</html>
